@@ -1,5 +1,7 @@
-import cv2
 from pyzbar import pyzbar
+import sys
+from PySide6.QtWidgets import *
+import cv2
 
 
 def read_barcodes(frame):
@@ -32,5 +34,7 @@ def main():
     cv2.destroyAllWindows()
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app = QApplication([])
+    window = main()
+    sys.exit(app.exec())
